@@ -138,5 +138,34 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<!-- ✅ Script para abrir e fechar o modal -->
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const manualBtn = document.getElementById('manualBtn');
+    const manualModal = document.getElementById('manualModal');
+    const closeModal = document.getElementById('closeModal');
+
+    if (manualBtn && manualModal && closeModal) {
+      manualBtn.addEventListener('click', () => {
+        manualModal.style.display = 'block';
+        manualModal.setAttribute('aria-hidden', 'false');
+      });
+
+      closeModal.addEventListener('click', () => {
+        manualModal.style.display = 'none';
+        manualModal.setAttribute('aria-hidden', 'true');
+      });
+
+      window.addEventListener('click', (event) => {
+        if (event.target === manualModal) {
+          manualModal.style.display = 'none';
+          manualModal.setAttribute('aria-hidden', 'true');
+        }
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
+
