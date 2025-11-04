@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Clima Certo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SOL FIXO -->
+<div class="sun"></div>
+
+<!-- NUVENS -->
+<div class="cloud"></div><div class="cloud"></div><div class="cloud"></div>
+<div class="cloud"></div><div class="cloud"></div><div class="cloud"></div>
+
+<header>Clima Certo</header>
+
+<main>
+  <h2>Sobre o Projeto</h2>
+  <p>Bem-vindo ao Clima Certo.</p>
+  <p>O aplicativo que transforma a maneira como você se relaciona com o clima, oferecendo informações meteorológicas precisas e em tempo real para que
+     você possa se planejar com confiança em todas as situações. Nosso sistema foi desenvolvido para atender tanto a usuários comuns quanto a profissionais de setores impactados pelas condições climáticas, como agricultura, transporte, turismo e energia, permitindo uma tomada de decisão mais segura e eficiente. Com uma interface intuitiva e amigável,
+      o Clima Certo possibilita que você confira rapidamente a previsão do tempo, e até mesmo forneça feedback sobre as condições climáticas locais, tornando a experiência interativa e personalizada. Além disso, o aplicativo ajuda a reduzir riscos e perdas, otimizando recursos e oferecendo suporte a atividades que dependem diretamente do clima. Quer você esteja planejando uma viagem, organizando tarefas ao ar livre ou monitorando o ambiente para atividades profissionais, o Clima Certo garante que você tenha informações confiáveis sempre à mão. Com a combinação de tecnologia, praticidade e precisão, nosso objetivo é tornar o clima previsível, ajudando você a se antecipar aos desafios do dia a dia e a aproveitar cada momento com segurança, conforto e tranquilidade.</p>
+
+  <button class="manual-btn" id="manualBtn">Manual do Usuário</button>
+
+  <!-- Botão embaixo do manual -->
+  <button class="bottom-cloud-btn" id="bottomBtn">
+    <div class="cloud-shape"><span class="cloud-text">Em breve</span></div>
+  </button>
+</main>
+
+<!-- Botão flutuante -->
+<button id="floatingBtn" class="fixed-button fade-visible" aria-label="Em breve">
+  <div class="cloud-shape"><span class="cloud-text">Em breve</span></div>
+</button>
+
+<script src="script.js"></script> <!-- seu script original com efeitos -->
+
+<!-- Script adicional para download dos arquivos -->
+<script>
+function iniciarDownload() {
+  const link = document.createElement('a');
+  link.href = 'exemplo.txt'; // arquivo de teste
+  link.download = 'exemplo.txt';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const bottomBtn = document.getElementById('bottomBtn');
+  const floatingBtn = document.getElementById('floatingBtn');
+
+  if (bottomBtn) {
+    bottomBtn.addEventListener('click', () => {
+      setTimeout(iniciarDownload, 1200); // delay para efeito
+    });
+  }
+
+  if (floatingBtn) {
+    floatingBtn.addEventListener('click', () => {
+      setTimeout(iniciarDownload, 1200); // delay para efeito
+    });
+  }
+});
+</script>
+
+<!-- Modal -->
+<div id="manualModal" class="modal" aria-hidden="true">
+  <div class="modal-content" role="dialog" aria-modal="true">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <h2 class="centralizado">Manual do Usuário</h2>
+    <p style="text-align: center;">☁️COMO BAIXAR O APK☁️</p>
+    <p>No site oficial, procure o menu ou botão identificado como “Baixar”.</p>
+    <p>Clique sobre essa opção para ser redirecionado à página de download.</p>
+    <p style="text-align: center;">☔Permitir Instalação de Fontes Desconhecidas☔</p>
+    <p>Como o aplicativo é baixado diretamente do site (fora da Play Store), o Android pode solicitar uma autorização de segurança.</p>
+    <p>Siga os passos abaixo:</p>
+    <p>Ao iniciar o download, o sistema exibirá um aviso sobre fontes desconhecidas.</p>
+    <p>Toque em Configurações.</p>
+    <p>Ative a opção “Permitir desta fonte” como mostra na imagem abaixo:</p>
+
+<!-- Imagens lado a lado -->
+<div style="display: flex; justify-content: center; gap: 20px; margin: 20px 0;">
+  <img src="cel1.png" alt="Tela de permissão 1" style="width: 200px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+  <img src="cel2.png" alt="Tela de permissão 2" style="width: 200px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+</div>
+
+    <p>Retorne à tela anterior e continue o processo de instalação normalmente.</p>
+    <p></p>
+    <p style="text-align: center;">🌡️Instalação do Aplicativo:🌡️</p>
+    <p></p>
+    <p>Após o download ser concluído, abra o arquivo ClimaCerto.apk na pasta Downloads do seu dispositivo.</p>
+    <p>Toque em Instalar e aguarde o processo ser finalizado.</p>
+    <p>Quando a instalação for concluída, toque em Abrir para iniciar o aplicativo.</p>
+    <p></p>
+    <p style="text-align: center;">❄️Primeira Execução:❄️</p>
+    <p></p>
+    <p>Na primeira vez que o aplicativo for aberto, o sistema solicitará permissões básicas, como acesso à internet.</p>
+    <p>Permita essas autorizações para garantir o funcionamento correto.</p>
+    <p>Em seguida, a tela inicial exibirá as condições climáticas atuais, previsões para os próximos dias e outras informações úteis.</p>
+    <p>⚠️Proteção de Dados e LGPD⚠️</p>
+    <p>O Clima Certo respeita integralmente as diretrizes da Lei Geral de Proteção de Dados (Lei nº 13.709/2018).</p>
+    <p>Os dados coletados são utilizados exclusivamente para aprimorar a experiência do usuário e não são compartilhados com terceiros sem consentimento.</p>
+     <p>O aplicativo não solicita informações pessoais sensíveis nem realiza rastreamento indevido, mantendo a privacidade e segurança de todos os usuários.</p>
+    <p style="text-align: center;">⚡NOVIDADES EM BREVE⚡</p>
+    <p>O aplicativo estará disponível oficialmente na Google Play Store e na Apple App Store.</p>
+    <p>Será lançada uma nova versão com mapas interativos para melhor visualização das condições meteorológicas em diferentes regiões.</p>
+    <p></p>
+    
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+<!-- Função de download adicionada -->
+<script>
+function iniciarDownload() {
+  const link = document.createElement('a');
+  link.href = 'exemplo.txt'; // arquivo fictício para teste
+  link.download = 'exemplo.txt';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+// Aguardar o script principal carregar
+window.addEventListener('DOMContentLoaded', () => {
+  const bottomBtn = document.getElementById('bottomBtn');
+  if (bottomBtn) {
+    bottomBtn.addEventListener('click', () => {
+      setTimeout(iniciarDownload, 1200); // inicia o download após 1,2s
+    });
+  }
+});
+</script>
+
+</body>
+</html>
