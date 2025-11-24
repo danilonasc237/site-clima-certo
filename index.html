@@ -11,7 +11,7 @@
 <!-- SOL FIXO -->
 <div class="sun"></div>
 
-<!-- NUVENS -->
+<!-- NUVENS FLUTUANTES -->
 <div class="cloud"></div><div class="cloud"></div><div class="cloud"></div>
 <div class="cloud"></div><div class="cloud"></div><div class="cloud"></div>
 
@@ -19,152 +19,92 @@
 
 <main>
   <h2>Sobre o Projeto</h2>
-  <p>Bem-vindo ao Clima Certo.</p>
-  <p>O aplicativo que transforma a maneira como você se relaciona com o clima, oferecendo informações meteorológicas precisas e em tempo real para que
-     você possa se planejar com confiança em todas as situações. Nosso sistema foi desenvolvido para atender tanto a usuários comuns quanto a profissionais de setores impactados pelas condições climáticas, como agricultura, transporte, turismo e energia, permitindo uma tomada de decisão mais segura e eficiente. Com uma interface intuitiva e amigável,
-      o Clima Certo possibilita que você confira rapidamente a previsão do tempo, e até mesmo forneça feedback sobre as condições climáticas locais, tornando a experiência interativa e personalizada. Além disso, o aplicativo ajuda a reduzir riscos e perdas, otimizando recursos e oferecendo suporte a atividades que dependem diretamente do clima. Quer você esteja planejando uma viagem, organizando tarefas ao ar livre ou monitorando o ambiente para atividades profissionais, o Clima Certo garante que você tenha informações confiáveis sempre à mão. Com a combinação de tecnologia, praticidade e precisão, nosso objetivo é tornar o clima previsível, ajudando você a se antecipar aos desafios do dia a dia e a aproveitar cada momento com segurança, conforto e tranquilidade.</p>
+  <p>O Clima Certo é um aplicativo que conecta você ao clima de forma prática e confiável. Com previsões em tempo real, ele ajuda desde o planejamento do dia a dia até decisões em setores como agricultura, transporte e turismo. Intuitivo e interativo, o app oferece uma experiência moderna e personalizada para que você esteja sempre preparado para qualquer mudança no tempo.</p>
 
+  <!-- Galeria com moldura de nuvem (imagens intactas) -->
+  <div class="galeria-clima">
+    <div class="nuvem-frame"><img src="ft1.JPG" alt="Tela principal do aplicativo Clima Certo"></div>
+    <div class="nuvem-frame"><img src="ft 5.JPG" alt="Interface de previsão do Clima Certo"></div>
+
+    <!-- TEXTO PARA VOTAÇÃO (ADICIONADO) -->
+    <div class="texto-clima">
+      <p>Contamos com a ajuda dos usuários para votarem no clima!</p>
+    </div>
+
+    <!-- NOVAS IMAGENS (ADICIONADAS: mesmas molduras das de cima) -->
+    <div class="nuvem-frame"><img src="ft3.JPG" alt="Foto ft2 - Clima Certo"></div>
+    <div class="nuvem-frame"><img src="ft2.JPG" alt="Foto ft3 - Clima Certo"></div>
+  </div>
+
+  <!-- Botão principal: Manual do Usuário -->
   <button class="manual-btn" id="manualBtn">Manual do Usuário</button>
 
-  <!-- Botão embaixo do manual -->
-  <button class="bottom-cloud-btn" id="bottomBtn">
-    <div class="cloud-shape"><span class="cloud-text">Em breve</span></div>
-  </button>
+  <!-- Botão embaixo do manual (nuvem) -->
+  <div class="bottom-area">
+    <button class="bottom-cloud-btn" id="bottomBtn" aria-label="Em breve - botão">
+      <div class="cloud-shape">
+        <span class="cloud-text">Baixar</span>
+      </div>
+    </button>
+  </div>
 </main>
 
-<!-- Botão flutuante -->
-<button id="floatingBtn" class="fixed-button fade-visible" aria-label="Em breve">
-  <div class="cloud-shape"><span class="cloud-text">Em breve</span></div>
+<!-- Botão flutuante central em formato de nuvem -->
+<button id="floatingBtn" class="fixed-button fade-visible" aria-label="Em breve flutuante">
+  <div class="cloud-shape">
+    <span class="cloud-text">Baixar</span>
+  </div>
 </button>
 
-<script src="script.js"></script> <!-- seu script original com efeitos -->
-
-<!-- Script adicional para download dos arquivos -->
-<script>
-function iniciarDownload() {
-  const link = document.createElement('a');
-  link.href = 'exemplo.txt'; // arquivo de teste
-  link.download = 'exemplo.txt';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-  const bottomBtn = document.getElementById('bottomBtn');
-  const floatingBtn = document.getElementById('floatingBtn');
-
-  if (bottomBtn) {
-    bottomBtn.addEventListener('click', () => {
-      setTimeout(iniciarDownload, 1200); // delay para efeito
-    });
-  }
-
-  if (floatingBtn) {
-    floatingBtn.addEventListener('click', () => {
-      setTimeout(iniciarDownload, 1200); // delay para efeito
-    });
-  }
-});
-</script>
-
-<!-- Modal -->
+<!-- Modal Manual -->
 <div id="manualModal" class="modal" aria-hidden="true">
   <div class="modal-content" role="dialog" aria-modal="true">
-    <span class="close-btn" id="closeModal">&times;</span>
+    <span class="close-btn" id="closeModal" title="Fechar">&times;</span>
     <h2 class="centralizado">Manual do Usuário</h2>
-    <p style="text-align: center;">☁️COMO BAIXAR O APK☁️</p>
-    <p>No site oficial, procure o menu ou botão identificado como “Baixar”.</p>
-    <p>Clique sobre essa opção para ser redirecionado à página de download.</p>
-    <p style="text-align: center;">☔Permitir Instalação de Fontes Desconhecidas☔</p>
-    <p>Como o aplicativo é baixado diretamente do site (fora da Play Store), o Android pode solicitar uma autorização de segurança.</p>
-    <p>Siga os passos abaixo:</p>
-    <p>Ao iniciar o download, o sistema exibirá um aviso sobre fontes desconhecidas.</p>
-    <p>Toque em Configurações.</p>
-    <p>Ative a opção “Permitir desta fonte” como mostra na imagem abaixo:</p>
 
-<!-- 🔹 Suas novas imagens lado a lado -->
-<div style="display: flex; flex-direction: column; align-items: center; gap: 20px; margin: 20px 0;">
-  <img src="ft1.JPG" alt="Tela inicial do app Clima Certo" style="width: 260px; border-radius: 12px; box-shadow: 0 0 12px rgba(0,0,0,0.3);">
-  <img src="ft2.JPG" alt="Previsão e informações climáticas" style="width: 260px; border-radius: 12px; box-shadow: 0 0 12px rgba(0,0,0,0.3);">
-  <img src="ft 5.JPG" alt="Estatísticas por cidade" style="width: 260px; border-radius: 12px; box-shadow: 0 0 12px rgba(0,0,0,0.3);">
-</div>
+    <div class="manual-section">
+      <h3>☁️☁️ COMO BAIXAR O APK ☁️☁️</h3>
+      <p>No site oficial, procure o botão <strong>“Baixar”</strong> e clique para iniciar o download do aplicativo.</p>
+    </div>
 
-    <p>Retorne à tela anterior e continue o processo de instalação normalmente.</p>
-    <p></p>
-    <p style="text-align: center;">🌡️Instalação do Aplicativo:🌡️</p>
-    <p></p>
-    <p>Após o download ser concluído, abra o arquivo ClimaCerto.apk na pasta Downloads do seu dispositivo.</p>
-    <p>Toque em Instalar e aguarde o processo ser finalizado.</p>
-    <p>Quando a instalação for concluída, toque em Abrir para iniciar o aplicativo.</p>
-    <p></p>
-    <p style="text-align: center;">❄️Primeira Execução:❄️</p>
-    <p></p>
-    <p>Na primeira vez que o aplicativo for aberto, o sistema solicitará permissões básicas, como acesso à internet.</p>
-    <p>Permita essas autorizações para garantir o funcionamento correto.</p>
-    <p>Em seguida, a tela inicial exibirá as condições climáticas atuais, previsões para os próximos dias e outras informações úteis.</p>
-    <p>⚠️Proteção de Dados e LGPD⚠️</p>
-    <p>O Clima Certo respeita integralmente as diretrizes da Lei Geral de Proteção de Dados (Lei nº 13.709/2018).</p>
-    <p>Os dados coletados são utilizados exclusivamente para aprimorar a experiência do usuário e não são compartilhados com terceiros sem consentimento.</p>
-     <p>O aplicativo não solicita informações pessoais sensíveis nem realiza rastreamento indevido, mantendo a privacidade e segurança de todos os usuários.</p>
-    <p style="text-align: center;">⚡NOVIDADES EM BREVE⚡</p>
-    <p>Será lançada uma nova versão com mapas interativos para melhor visualização das condições meteorológicas em diferentes regiões.</p>
-    <p></p>
-    
+    <div class="manual-section">
+      <h3>☔☔ PERMITIR INSTALAÇÃO DE FONTES DESCONHECIDAS ☔☔</h3>
+      <p>Como o app é baixado fora da Play Store, o Android solicitará uma autorização.</p>
+      <ul>
+        <li>Ao iniciar o download, toque em <strong>Configurações</strong>.</li>
+        <li>Ative a opção <strong>“Permitir desta fonte”</strong>.</li>
+      </ul>
+
+      <div class="manual-imgs">
+        <img src="cel1.png" alt="Permitir desta fonte">
+        <img src="cel2.png" alt="Confirmação de instalação">
+      </div>
+
+      <p>Após isso, volte e continue a instalação normalmente.</p>
+    </div>
+
+    <div class="manual-section">
+      <h3>🌡️🌡️ INSTALAÇÃO DO APLICATIVO 🌡️🌡️</h3>
+      <p>Após o download, abra o arquivo <strong>ClimaCerto.apk</strong> na pasta Downloads e toque em <strong>Instalar</strong>.</p>
+    </div>
+
+    <div class="manual-section">
+      <h3>❄️❄️ PRIMEIRA EXECUÇÃO ❄️❄️</h3>
+      <p>Na primeira abertura, o app solicitará permissões básicas. Permita para o funcionamento correto.</p>
+    </div>
+
+    <div class="manual-section">
+      <h3>⚠️⚠️ PROTEÇÃO DE DADOS E LGPD ⚠️⚠️</h3>
+      <p>O Clima Certo segue a Lei Geral de Proteção de Dados. Dados são usados apenas para melhorar a experiência do usuário.</p>
+    </div>
+
+    <div class="manual-section">
+      <h3>⚡⚡ NOVIDADES EM BREVE ⚡⚡</h3>
+      <p>Mapas interativos e melhorias serão lançados em breve.</p>
+    </div>
   </div>
 </div>
 
 <script src="script.js"></script>
-
-<!-- Função de download adicionada -->
-<script>
-function iniciarDownload() {
-  const link = document.createElement('a');
-  link.href = 'exemplo.txt'; // arquivo fictício para teste
-  link.download = 'exemplo.txt';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-
-// Aguardar o script principal carregar
-window.addEventListener('DOMContentLoaded', () => {
-  const bottomBtn = document.getElementById('bottomBtn');
-  if (bottomBtn) {
-    bottomBtn.addEventListener('click', () => {
-      setTimeout(iniciarDownload, 1200); // inicia o download após 1,2s
-    });
-  }
-});
-</script>
-
-<!-- ✅ Script para abrir e fechar o modal -->
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const manualBtn = document.getElementById('manualBtn');
-    const manualModal = document.getElementById('manualModal');
-    const closeModal = document.getElementById('closeModal');
-
-    if (manualBtn && manualModal && closeModal) {
-      manualBtn.addEventListener('click', () => {
-        manualModal.style.display = 'block';
-        manualModal.setAttribute('aria-hidden', 'false');
-      });
-
-      closeModal.addEventListener('click', () => {
-        manualModal.style.display = 'none';
-        manualModal.setAttribute('aria-hidden', 'true');
-      });
-
-      window.addEventListener('click', (event) => {
-        if (event.target === manualModal) {
-          manualModal.style.display = 'none';
-          manualModal.setAttribute('aria-hidden', 'true');
-        }
-      });
-    }
-  });
-</script>
-
 </body>
 </html>
